@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
 import { connect } from "../config/db.js";
+import { studentRouter } from "./routes/index.route.js";
 dotenv.config();
 
 const app = express();
@@ -44,5 +45,7 @@ connect();
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
+
+app.use("/api/v1/students", studentRouter);
 
 export { app, httpServer };
