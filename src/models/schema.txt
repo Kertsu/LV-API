@@ -1,0 +1,12 @@
+STUDENT
+- id
+- studentId
+- email 
+- firstName
+- middleName
+- lastName
+- avatar
+- contactNumber
+- currentAddress
+- birthdate
+- gender 
