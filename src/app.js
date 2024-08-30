@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
-
+import { connect } from "../config/db.js";
 dotenv.config();
 
 const app = express();
@@ -38,6 +38,8 @@ app.use(
     credentials: true,
   })
 );
+
+connect();
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");
